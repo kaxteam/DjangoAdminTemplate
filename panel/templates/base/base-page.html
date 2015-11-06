@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+<head>
+    {% include "base/base-headers.html" %}
+
+</head>
+
+<body>
+
+{% include "base/base-navbar.html" %}
+
+<div id="wrapper">
+    <div id="page-wrapper">
+        {% block page-wrapper-block %}
+            {% block page-title %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Dashboard</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            {% endblock %}
+
+            {% block content-block %}
+            {% endblock %}
+
+            </div>
+            <!-- /#page-wrapper -->
+        {% endblock %}
+
+</div>
+<!-- /#wrapper -->
+
+{% include "base/base-scripts.html" %}
+
+</body>
+
+</html>
