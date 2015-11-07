@@ -1,9 +1,10 @@
 from django.conf.urls import include, url
 from rest_framework import routers
-from services.views import SampleViewSet
+from services.views import RaspViewSet
+
 
 router = routers.DefaultRouter()
-router.register('samples', SampleViewSet, base_name= 'api-sample')
+router.register(r'rasp', RaspViewSet, base_name= 'api-rasp')
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
