@@ -84,6 +84,10 @@ class RaspViewSet(viewsets.GenericViewSet):
         ore = sense.get_orientation()
         fall = self.check_fall_pitch(ore) or self.check_fall_roll(ore)
         ore["fall"] = fall
+        if fall:
+            sense.show_letter("X",text_colour=[255,0,0])
+        else:
+            sense.clear()
         return Response(ore)
 
 
